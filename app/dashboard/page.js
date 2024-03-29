@@ -1,7 +1,8 @@
+import Transactions from "../ui/Transactions"
 
 const page = () => {
   return (
-    <div>Dashboard</div>
+    <Transactions />
   )
 }
 

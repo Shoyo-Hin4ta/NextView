@@ -1,8 +1,9 @@
-import React from 'react'
+import Products from "@/app/ui/Products"
+
 
 const page = () => {
   return (
-    <div>page</div>
+    <Products />
   )
 }
 

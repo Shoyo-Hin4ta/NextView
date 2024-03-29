@@ -1,8 +1,7 @@
-import React from 'react'
-
+import Users from "@/app/ui/Users"
 const page = () => {
   return (
-    <div>page</div>
+    <Users />
   )
 }
 
