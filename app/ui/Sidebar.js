@@ -23,16 +23,18 @@ const menuItems = [
     },
     {
         name : "Transactions",
-        path : "/transactions/products",
+        path : "/dashboard/transactions",
         icon : <GrTransaction />
     }
 ]
 
 const Sidebar = () => {
   return (
-    <div className='relative h-screen bg-red-300 w-1/5'>
-        <div className='flex border border-black p-2 overflow-auto justify-between items-center'><Image  alt='logo' src='/next-js-icon.png'
-        width={40} height={40}/> <span className='ml-4'>Hello  </span>
+    <div className='h-screen bg-red-300 border border-black '>
+        <div className='flex p-2 overflow-auto  items-center h-20'>
+            <Image  alt='logo' src='/next-js-icon.png'
+            width={40} height={40}/> 
+            <span className='ml-4'>Hello User </span>
         </div>
         <Menu menuItems={menuItems}/>
     </div>
