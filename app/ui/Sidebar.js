@@ -30,7 +30,7 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <div className='h-screen bg-red-300 border border-black '>
+    <div className='bg-red-300 h-full'>
         <div className='flex p-2 overflow-auto  items-center h-20'>
             <Image  alt='logo' src='/next-js-icon.png'
             width={40} height={40}/> 
