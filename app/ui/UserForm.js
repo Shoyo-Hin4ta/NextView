@@ -1,8 +1,10 @@
-import React from 'react'
+import { addUser } from "@/lib/actions"
+
 
 const UserForm = () => {
   return (
-    <div className='bg-blue-100 h-full w-full grid grid-cols-2 grid-rows-5 gap-8 place-items-center'>
+    <form action={addUser} className='h-full w-full'>
+    <div className='bg-blue-100 h-full w-full grid grid-cols-2 grid-rows-5 gap-8 place-items-center p-4'>
         <div className='border'>
           <input placeholder='Username' name="username" type='text' className='px-4 py-4 rounded-lg'/>
         </div>
@@ -13,10 +15,9 @@ const UserForm = () => {
           <input placeholder='Password' type='password' name="password" className='px-4 py-4 rounded-lg'/>
         </div>
         <div>
-          <input placeholder='Phone' type='number' name="phone" className='px-4 py-4 rounded-lg'/>
+          <input placeholder='Phone' type='number' name="phonenumber" className='px-4 py-4 rounded-lg'/>
         </div>
         <div className=''>
-
           <select name="isAdmin" id="" className='rounded-lg px-16 py-4 '>
           <option value="">Is Admin ?</option>
             <option value="yes">Yes</option>
@@ -40,6 +41,7 @@ const UserForm = () => {
         </div>
         
     </div>
+    </form>
   )
 }
 

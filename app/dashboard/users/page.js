@@ -1,5 +1,7 @@
 import Users from "@/app/ui/Users"
-const page = () => {
+const page = async() => {
+
+  
   return (
     <Users />
   )

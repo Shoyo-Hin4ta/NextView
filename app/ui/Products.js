@@ -1,7 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
+import fetchUsers, { fetchProducts } from "@/lib/models/data";
 
-const Products = () => {
+const Products = async() => {
+
+    const products = await fetchProducts();
+    console.log(products);
   return (
     <div className="p-6 bg-blue-100 mt-2 rounded-lg">
         <table className='w-full border-spacing-y-10'>
@@ -23,21 +27,22 @@ const Products = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {products.map(product => (
+                <tr key={product.id}>
                     <td>
                         <div className="flex ">
                             <Image className="mr-2" alt='userImg' src='/next-js-icon.png' width={25} height={10}/>
-                            Product Name
+                            {product.productName}
                         </div>
                     </td>
                     <td>
-                        <div className="flex items-center justify-center">
-                            Product desc
+                        <div className="flex items-center justify-center overflow-x-auto">
+                            {product.productDesc}
                         </div>
                     </td>
                     <td>
                         <div className="flex items-center justify-center ">
-                            price 
+                            {product.price}  
                         </div>
                     </td>
                     <td>
@@ -47,16 +52,16 @@ const Products = () => {
                     </td>
                     <td>
                         <div className="flex items-center justify-center ">
-                            stock
+                            {product.stock} 
                         </div>
                     </td>
                     <td>
                         <div className="flex items-center justify-center">
-                            <button className="bg-green-400 text-sm p-1">View</button>
+                            <Link href={`/dashboard/products/${product._id}`}><button className="bg-green-400 text-sm p-1">View</button></Link>
                             <button className="bg-red-600 text-sm  p-1">Delete</button>
                         </div>
                     </td>
-                </tr>
+                </tr>))}
             </tbody>
 
         </table>

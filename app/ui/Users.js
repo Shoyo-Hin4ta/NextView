@@ -1,7 +1,11 @@
+import fetchUsers from '@/lib/models/data'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Users = () => {
+const Users = async() => {
+
+    const users = await fetchUsers();
+    // console.log(users)
   return (
     <div className="p-6 bg-blue-100 mt-2 rounded-lg">
         <table className='w-full border-spacing-y-10'>
@@ -23,16 +27,17 @@ const Users = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {users.map(user => (
+                <tr key = {user.username}>
                     <td>
                         <div className="flex ">
                             <Image className="mr-2" alt='userImg' src='/next-js-icon.png' width={25} height={10}/>
-                            Name
+                            {user.username}
                         </div>
                     </td>
                     <td>
                         <div className="flex items-center justify-center">
-                            name@gmail.com
+                            {user.email}
                         </div>
                     </td>
                     <td>
@@ -42,21 +47,21 @@ const Users = () => {
                     </td>
                     <td>
                         <div className="flex items-center justify-center ">
-                            admin
+                            {user.isAdmin ? "Admin" : "User"}
                         </div>
                     </td>
                     <td>
                         <div className="flex items-center justify-center ">
-                            active
+                            {user.isActive ? "Online" : "Offline"}
                         </div>
                     </td>
                     <td>
                         <div className="flex items-center justify-center">
-                            <button className="bg-green-400 text-sm p-2">View</button>
+                            <Link href={`/dashboard/users/${user._id}`}><button className="bg-green-400 text-sm p-2">View</button></Link>
                             <button className="bg-red-600 text-sm  p-2">Delete</button>
                         </div>
                     </td>
-                </tr>
+                </tr>))}
             </tbody>
 
         </table>

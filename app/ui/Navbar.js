@@ -10,7 +10,6 @@ import { MdPublic } from "react-icons/md";
 const Navbar = () => {
 
     const pathName = usePathname();
-    console.log(pathName.split('/').pop())
     const lastPart = pathName.split('/').pop(); // Extracting the last part of the pathname
     const title = lastPart.charAt(0).toUpperCase() + lastPart.slice(1); // Capitalizing the first letter
 
