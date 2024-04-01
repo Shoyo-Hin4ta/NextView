@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 const Menu = ({menuItems}) => {
 
     const pathName = usePathname();
-    console.log(pathName)
+    // console.log(pathName)
   return (
     <div className="mt-4 ">
         <ul>

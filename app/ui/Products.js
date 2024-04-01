@@ -1,11 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
-import fetchUsers, { fetchProducts } from "@/lib/models/data";
+import  { fetchProducts } from "@/lib/models/data";
+import { deleteProduct } from "@/lib/actions";
 
 const Products = async() => {
 
     const products = await fetchProducts();
-    console.log(products);
+    // console.log(products);
   return (
     <div className="p-6 bg-blue-100 mt-2 rounded-lg">
         <table className='w-full border-spacing-y-10'>
@@ -58,7 +59,10 @@ const Products = async() => {
                     <td>
                         <div className="flex items-center justify-center">
                             <Link href={`/dashboard/products/${product._id}`}><button className="bg-green-400 text-sm p-1">View</button></Link>
-                            <button className="bg-red-600 text-sm  p-1">Delete</button>
+                            <form action={deleteProduct}>
+                                <input type="hidden" name="id" value={product._id.toString()} />
+                                <button className="bg-red-600 text-sm  p-1">Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>))}

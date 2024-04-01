@@ -1,9 +1,10 @@
 import ViewProduct from "@/app/ui/ViewProduct"
 
 
-const page = () => {
+const page = ({params}) => {
+  console.log(params.id)
   return (
-    <ViewProduct />
+    <ViewProduct id = {params.id}/>
   )
 }
 

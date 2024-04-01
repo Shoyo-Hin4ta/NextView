@@ -1,11 +1,11 @@
 import fetchUsers from '@/lib/models/data'
 import Image from 'next/image'
 import Link from 'next/link'
+import { deleteUser } from '@/lib/actions'
 
 const Users = async() => {
 
     const users = await fetchUsers();
-    // console.log(users)
   return (
     <div className="p-6 bg-blue-100 mt-2 rounded-lg">
         <table className='w-full border-spacing-y-10'>
@@ -58,7 +58,10 @@ const Users = async() => {
                     <td>
                         <div className="flex items-center justify-center">
                             <Link href={`/dashboard/users/${user._id}`}><button className="bg-green-400 text-sm p-2">View</button></Link>
-                            <button className="bg-red-600 text-sm  p-2">Delete</button>
+                            <form action={deleteUser}>
+                                <input type="hidden" name='id' value={user._id.toString()} />
+                                <button className="bg-red-600 text-sm  p-2">Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>))}
