@@ -4,6 +4,9 @@ import { FiUsers } from "react-icons/fi";
 import { BiLogoProductHunt } from "react-icons/bi";
 import { GrTransaction } from "react-icons/gr";
 import Menu from "./Menu";
+// import { signOut, useSession } from "next-auth/react";
+
+
 
 const menuItems = [
     {
@@ -29,6 +32,7 @@ const menuItems = [
 ]
 
 const Sidebar = () => {
+//   const {data: session} = useSession()
   return (
     <div className='bg-red-300 h-full'>
         <div className='flex p-2 overflow-auto  items-center h-20'>
@@ -37,6 +41,7 @@ const Sidebar = () => {
             <span className='ml-4'>Hello User </span>
         </div>
         <Menu menuItems={menuItems}/>
+
     </div>
   )
 }
