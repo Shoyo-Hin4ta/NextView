@@ -28,7 +28,7 @@ const ProductForm = () => {
               <input placeholder='Color' type='text' name="color" className='px-4 py-4 rounded-lg' required/>
             </div>
             <div className=' p-2 col-span-2 row-span-2 h-full w-full'>
-              <textarea placeholder='Product Description' name="productdesc" type='text' className='h-full w-full text-center rounded-lg px-16 py-4' />
+              <textarea placeholder='Product Description' name="productdesc" type='text' className='h-full w-full rounded-lg px-16 py-4' />
             </div>
             <div className='text-center w-full col-span-2 p-2'>
               <button className='text-sm p-2 rounded-lg bg-blue-400 h-full w-full'>

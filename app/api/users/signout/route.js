@@ -1,4 +1,3 @@
-import connection from "@/lib/db/index";
 import { NextResponse } from "next/server";
 
 

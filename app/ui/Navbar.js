@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <div className="b-2 flex justify-between items-center p-2 bg-blue-100 h-20 rounded-lg">
-        <div>{title === "Adduser" || title ==="Addproduct" ? "Add" : title}</div>
+        <div>{title === "Adduser" || title ==="Addproduct" || title === "Addtransaction" ? "Add" : title}</div>
         <div className="flex gap-2 items-center">
             <input type="text" placeholder='Search'className="px-4 text-sm rounded-lg"/>
             <BsChatDotsFill />

@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { GET } from "./api/users/user/route";
 // import { getServerSession } from "next-auth";
 // import  SessionProvider  from "@/lib/SessionProvider";
 

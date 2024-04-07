@@ -32,7 +32,7 @@ const UserForm = () => {
             </select>
         </div>
         <div className=' p-2 col-span-2 row-span-2 h-full w-full'>
-          <input placeholder='address' name="address" type='text' className='h-full w-full text-center rounded-lg px-16 py-4' />
+          <input placeholder='address' name="address" type='text' className='h-full w-full rounded-lg px-16 py-4' />
         </div>
         <div className='text-center w-full col-span-2 p-2'>
           <button className='p-2 rounded-lg bg-blue-400 h-full w-full'>

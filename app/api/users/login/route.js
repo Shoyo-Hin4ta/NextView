@@ -10,7 +10,7 @@ export async function POST(request){
     try {
         const reqBody = await request.json();
         const {username, password} = reqBody;
-        console.log(reqBody);
+        // console.log(reqBody);
 
         const user = await Users.findOne({username})
         if(!user){
@@ -23,7 +23,7 @@ export async function POST(request){
             return NextResponse.json({
                 error: "check your credentials",
                 success:true
-            })
+            }, {status: 401})
         }
 
         const tokenData = {

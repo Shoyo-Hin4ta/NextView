@@ -1,6 +1,5 @@
 import Sidebar from '../ui/Sidebar'
-import Navbar
- from '../ui/Navbar'
+import Navbar from '../ui/Navbar'
 const layout = ({children}) => {
   return (
     <div className='border border-black flex h-screen w-screen'>
